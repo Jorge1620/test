@@ -8,18 +8,15 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { BodyComponent } from './body/body.component';
-
-//modulos
-import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './body/home/home.component';
 
 
-const appRoutes: Routes = [
-  { path: '', redirectTo: "/home", pathMatch: "full" },
-  { path: 'home', component: HomeComponent },
-  { path: 'about', component: FooterComponent },
-  { path: '**', redirectTo: "/home", pathMatch: "full" }
-];
+import { routes } from './app-routes';
+
+//modulos
+import { RouterModule, Routes } from '@angular/router';
+import { AppRoutingModule } from './module/router/app-routing.module';
+
 
 @NgModule({
   declarations: [
@@ -31,7 +28,8 @@ const appRoutes: Routes = [
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(appRoutes)
+    routes,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
