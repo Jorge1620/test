@@ -7,7 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BodyComponent implements OnInit {
 
-  constructor() { }
+	variable:string = "Viene desde padre";
+
+  constructor() {
+
+  }
 
   ngOnInit() {
   }
